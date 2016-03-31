@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Flex Layouts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flex-layouts.css">
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Flex Layouts Examples</h1>
+
+    <h3>To Do</h3>
+    <ul>
+      <li>Responsive</li>
+    </ul>
+
+    <hr>
+
+    <h2>Border Layout</h2>
+
+    <h3>With All Parts</h3>
+    <div class="border-layout">
+      <div class="widget border-layout-north">north</div>
+      <div class="widget border-layout-east">east</div>
+      <div class="widget border-layout-center">center<br>center</div>
+      <div class="widget border-layout-west">west west<br>west west<br>west west</div>
+      <div class="widget border-layout-south">south<br>south</div>
+    </div>
+
+    <h3>With Some Parts</h3>
+    <div class="border-layout">
+      <div class="widget border-layout-north">north</div>
+      <div class="widget border-layout-center">center</div>
+      <div class="widget border-layout-west">west</div>
+    </div>
+
+    <h3>Order-independent</h3>
+    <div class="border-layout">
+      <div class="widget border-layout-south">south<br>south</div>
+      <div class="widget border-layout-center">center<br>center</div>
+      <div class="widget border-layout-east">east</div>
+      <div class="widget border-layout-west">west west<br>west west<br>west west</div>
+      <div class="widget border-layout-north">north</div>
+    </div>
+
+
+    <hr>
+
+    <h2>Box Layout</h2>
+
+    <h3>Box Layout (Vertical)</h3>
+
+    <div class="box-layout-v">
+      <div class="widget">item 1</div>
+      <div class="widget">item 2 item 2<br>item 2 item 2</div>
+      <div class="widget">item 3 item 3 item 3<br>item 3 item 3 item 3<br>item 3 item 3 item 3</div>
+    </div>
+
+    <h3>Box Layout (Horizontal)</h3>
+    <div class="box-layout-h">
+      <div class="widget">item 1</div>
+      <div class="widget">item 2 item 2<br>item 2 item 2</div>
+      <div class="widget">item 3 item 3 item 3<br>item 3 item 3 item 3<br>item 3 item 3 item 3</div>
+    </div>
+
+    <hr>
+
+    <h2>Card Layout</h2>
+
+    <div class="card-layout" style="width: 50%">
+      <div class="card-layout-cards" id="example-card-layout">
+        <div class="widget active">item 1</div>
+        <div class="widget">item 2 item 2<br>item 2 item 2</div>
+        <div class="widget">item 3 item 3 item 3<br>item 3 item 3 item 3<br>item 3 item 3 item 3</div>
+      </div>
+    </div>
+
+    <div data-card-layout-switcher-for="example-card-layout" style="margin-top: 10px">
+      <a class="button" href="javascript:" data-card="1">Card 1</a>
+      <a class="button" href="javascript:" data-card="2">Card 2</a>
+      <a class="button" href="javascript:" data-card="3">Card 3</a>
+
+      <script type="text/javascript">
+        $(function() {
+          $('*[data-card-layout-switcher-for] a').click(function() {
+            var switcher = $(this).closest('*[data-card-layout-switcher-for]');
+            $('#' + switcher.data('card-layout-switcher-for') + ' > *').removeClass('active');
+            $('#' + switcher.data('card-layout-switcher-for') + ' > *:nth-child(' + $(this).data('card') + ')').addClass('active');
+          });
+        });
+      </script>
+    </div>
+
+    <hr>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+/* border layout */
+
+.border-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+
+.border-layout > * {
+}
+
+.border-layout-north, .border-layout-center, .border-layout-south {
+  flex-grow: 1;
+}
+
+.border-layout-north, .border-layout-south {
+  width: 100%;
+}
+
+.border-layout-north { order: 0; }
+.border-layout-east { order: 1; }
+.border-layout-center { order: 2; }
+.border-layout-west { order: 3; }
+.border-layout-south { order: 4; }
+
+/* box layout */
+
+.box-layout-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-layout-h {
+  display: flex;
+  flex-direction: row;
+}
+
+.box-layout-h > * {
+  flex: 1 1 auto;
+}
+
+/* card layout */
+
+.card-layout {
+  overflow: hidden;
+}
+
+.card-layout .card-layout-cards {
+  display: flex;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.card-layout .card-layout-cards > * {
+  flex: 1 0 100%;
+  order: 2;
+  box-sizing: border-box;
+}
+
+.card-layout *.active {
+  order: 1;
+}

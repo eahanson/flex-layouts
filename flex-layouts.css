@@ -18,9 +18,9 @@
 }
 
 .border-layout-north { order: 0; }
-.border-layout-east { order: 1; }
+.border-layout-west { order: 1; }
 .border-layout-center { order: 2; }
-.border-layout-west { order: 3; }
+.border-layout-east { order: 3; }
 .border-layout-south { order: 4; }
 
 /* box layout */
